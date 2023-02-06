@@ -2,8 +2,8 @@
 A ray tracing engine that uses only standard C++ libraries for rendering.
 [Click here to see the gallery!](#gallery)
 
-_Includes a live preview window of the multithreaded render_<br>
-<img src="https://imgur.com/ztZhAZr.gif" alt="Render preview window" width=100%>
+_Includes a live preview window of the multithreaded render_
+<img src="images/render_preview.gif" alt="Render preview window" width=80%>
 
 # Features
 - **Monte Carlo ray tracing**
@@ -40,50 +40,14 @@ A collection of some sample scenes rendered using the engine. The following imag
 ### Orthographic scene
 *1000x1000px, 6.1 seconds, 50 samples, denoised*
 <img src="https://i.imgur.com/Vshhf8i.png" width=100%>
-<div style="display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    width: 100%;
-    margin: 1rem 0;
-    padding: 0;
-    width: 100%;">
-    <div style="flex: 1 1 auto;">
-        <p style="text-align: center">Raw pass (not denoised)</p>
-        <img src="https://i.imgur.com/u5GwZtB.png">
-    </div>  
-    <div style="flex: 1 1 auto;">
-        <p style="text-align: center">Albedo pass</p>
-        <img src="https://i.imgur.com/4kIUE8Y.png">
-    </div>
-    <div style="flex: 1 1 auto;">
-        <p style="text-align: center">Emission pass</p> 
-        <img src="https://i.imgur.com/Do7QjXm.png">
-    </div>    
-</div>
-<div style="display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    width: 100%;
-    margin: 1rem 0;
-    padding: 0;
-    width: 100%;">
-    <div style="flex: 1 1 auto;">
-        <p style="text-align: center">Normal pass</p>
-        <img src="https://i.imgur.com/Ox5BrlU.png">
-    </div>  
-    <div style="flex: 1 1 auto;">
-        <p style="text-align: center">Depth pass</p>
-        <img src="https://i.imgur.com/y0gJipm.png">
-    </div>
-    <div style="flex: 1 1 auto;">
-        <p style="text-align: center">Opacity pass</p> 
-        <img src="https://i.imgur.com/7E3iCCR.png">
-    </div>    
-</div>
+
+| Raw pass (not denoised)              | Albedo pass                          | Emission pass                        |
+|:------------------------------------:|:------------------------------------:|:------------------------------------:|
+| ![](https://i.imgur.com/u5GwZtB.png) | ![](https://i.imgur.com/4kIUE8Y.png) | ![](https://i.imgur.com/Do7QjXm.png) |
+
+| Normal pass                          | Depth pass                           | Opacity pass                         |
+|:------------------------------------:|:------------------------------------:|:------------------------------------:|
+| ![](https://i.imgur.com/Ox5BrlU.png) | ![](https://i.imgur.com/y0gJipm.png) | ![](https://i.imgur.com/7E3iCCR.png) |
 
 ### Cornell box
 *1000x1000px, 49.6 seconds, 50 samples, denoised*
@@ -95,40 +59,12 @@ A collection of some sample scenes rendered using the engine. The following imag
 
 ### Normal map
 *1000x1000px, 100 samples, denoised*
-<div style="display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    width: 100%;
-    margin: 1rem 0;
-    padding: 0;
-    width: 100%;">
-    <div style="flex: 1 1 auto;">
-        <p style="text-align: center">Result (with normal map)<br><i>19.0 seconds</i></p>
-        <img src="https://i.imgur.com/2sCAkkj.png">
-    </div>
-    <div style="flex: 1 1 auto;">
-        <p style="text-align: center">Result (without normal map)<br><i>15.8 seconds</i></p> 
-        <img src="https://i.imgur.com/HsM4zb5.png">
-    </div>    
-</div>
-<div style="display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    width: 100%;
-    margin: 1rem 0;
-    padding: 0;
-    width: 100%;">
-    <div style="flex: 1 1 auto;">
-        <img src="https://i.imgur.com/cNC9Ehn.png">
-    </div>
-    <div style="flex: 1 1 auto;">
-        <img src="https://i.imgur.com/hhRxNob.png">
-    </div>    
-</div>
+
+| Result with normal map               | Result without normal map            |
+|:------------------------------------:|:------------------------------------:|
+| 19.0 seconds                         | 15.8 seconds                         |
+| ![](https://i.imgur.com/2sCAkkj.png) | ![](https://i.imgur.com/HsM4zb5.png) |
+| ![](https://i.imgur.com/cNC9Ehn.png) | ![](https://i.imgur.com/hhRxNob.png) |
 
 ### Metal roughness
 *2500x1000px, 43.2 seconds, 50 samples, denoised*
