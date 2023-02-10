@@ -222,7 +222,7 @@ vec3 ray_depth(const ray& r, const scene* _sc) {
     hit_record rec;
     ray_count++;
     if (!_sc->world.hit(r, 0.001, infinity, rec)) {
-        return vec3((-infinity + 1.0) / _sc->settings.samples_per_pixel, (-infinity + 1.0) / _sc->settings.samples_per_pixel, (-infinity + 1.0) / _sc->settings.samples_per_pixel);
+        return vec3(nan(""), nan(""), nan(""));
     }
 
     double dist = fabs(rec.t);
@@ -456,14 +456,14 @@ void rescale_depth_buffer(std::vector<color>& depth_buffer) {
     double min_val = infinity;
     double max_val = -infinity;
     for (int i = 0; i < depth_buffer.size(); i++) {
-        if (depth_buffer[i][0] >= 0.0) {
+        if (!isnan(depth_buffer[i][0])) {
             min_val = fmin(min_val, depth_buffer[i].x());
             max_val = fmax(max_val, depth_buffer[i].x());
         }
     }
 
     for (int i = 0; i < depth_buffer.size(); i++) {
-        if (depth_buffer[i][0] < 0.0) {
+        if (isnan(depth_buffer[i][0])) {
             depth_buffer[i] = color(1.0, 1.0, 1.0);
         }
         else {
