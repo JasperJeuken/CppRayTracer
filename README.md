@@ -2,6 +2,8 @@
 A ray tracing engine that uses only standard C++ libraries for rendering.
 [Click here to see the gallery!](#gallery)
 
+For a detailed guide on how to create scenes and render them, check out the [wiki](https://github.com/JasperJeuken/CppRayTracer/wiki)!
+
 _Includes a live preview window of the multithreaded render_
 <img src="images/render_preview.gif" alt="Render preview window" width=80%>
 
