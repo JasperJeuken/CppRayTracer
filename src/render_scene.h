@@ -117,8 +117,8 @@ public:
 
     // Helper functions for creating textures
     shared_ptr<solid_color> create_solid_color_texture(color c) { return make_shared<solid_color>(c); }
-    shared_ptr<checker_texture> create_checker_texture(color even, color odd) { return make_shared<checker_texture>(even, odd); }
-    shared_ptr<checker_texture> create_checker_texture(shared_ptr<texture> even, shared_ptr<texture> odd) { return make_shared<checker_texture>(even, odd); }
+    shared_ptr<checker_texture> create_checker_texture(color even, color odd, double s = 10.0) { return make_shared<checker_texture>(even, odd, s); }
+    shared_ptr<checker_texture> create_checker_texture(shared_ptr<texture> even, shared_ptr<texture> odd, double s = 10.0) { return make_shared<checker_texture>(even, odd, s); }
     shared_ptr<noise_texture> create_noise_texture(double scale = 1.0) { return make_shared<noise_texture>(scale); }
     shared_ptr<image_texture> create_image_texture(const char* filename) { return make_shared<image_texture>(filename); }
     shared_ptr<gradient_texture> create_gradient_texture(color c1, color c2) { return make_shared<gradient_texture>(c1, c2); }
@@ -131,8 +131,8 @@ public:
     shared_ptr<metal> create_metal_material(color c, double fuzz) { return make_shared<metal>(c, fuzz); }
     shared_ptr<metal> create_metal_material(color c, const char* filename) { return make_shared<metal>(c, filename); }
     shared_ptr<dielectric> create_dielectric_material(double index_of_refraction) { return make_shared<dielectric>(index_of_refraction); }
-    shared_ptr<diffuse_light> create_diffuse_light_material(color c) { return make_shared<diffuse_light>(c); }
-    shared_ptr<diffuse_light> create_diffuse_light_material(shared_ptr<texture> text) { return make_shared<diffuse_light>(text); }
+    shared_ptr<diffuse_light> create_diffuse_light_material(color c, double s = 1.0) { return make_shared<diffuse_light>(c, s); }
+    shared_ptr<diffuse_light> create_diffuse_light_material(shared_ptr<texture> text, double s = 1.0) { return make_shared<diffuse_light>(text, s); }
     shared_ptr<isotropic> create_isotropic_material(color c) { return make_shared<isotropic>(c); }
     shared_ptr<isotropic> create_isotropic_material(shared_ptr<texture> text) { return make_shared<isotropic>(text); }
 
