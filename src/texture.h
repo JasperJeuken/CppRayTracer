@@ -34,13 +34,13 @@ private:
 class checker_texture : public texture {
 public:
 	checker_texture() {}
-	checker_texture(shared_ptr<texture> _even, shared_ptr<texture> _odd) : even(_even), odd(_odd) {}
+	checker_texture(shared_ptr<texture> _even, shared_ptr<texture> _odd, double s = 10.0) : even(_even), odd(_odd), scale(s) {}
 
-	checker_texture(color c1, color c2) : even(make_shared<solid_color>(c1)), odd(make_shared<solid_color>(c2)) {}
+	checker_texture(color c1, color c2, double s = 10.0) : even(make_shared<solid_color>(c1)), odd(make_shared<solid_color>(c2)), scale(s) {}
 
 	// Return odd or even color based on point location
 	virtual color value(double u, double v, const point3& p) const override {
-		double sines = sin(10 * p.x())* sin(10 * p.y())* sin(10 * p.z());
+		double sines = sin(scale * p.x())* sin(scale * p.y())* sin(scale * p.z());
 		if (sines < 0)
 			return odd->value(u, v, p);
 		else
@@ -50,6 +50,7 @@ public:
 public:
 	shared_ptr<texture> odd;
 	shared_ptr<texture> even;
+	double scale;
 };
 
 // Class that generates perlin noise for 3D points
